@@ -1,0 +1,29 @@
+<site domain="dev.test">
+
+    <common>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width,  initial-scale=1" />
+            <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+            <title>MS module - Hello World</title>
+        </head>
+    </common>
+    <page template="templates/single.xml" path="">
+        <head></head>
+        <load href="content/aboutSite.xml" to="content" />
+    </page>
+    
+    <resources dir="images" path="images" />
+    <resources dir="css" path="css" />
+    <resources dir="js" path="js" />
+    <resources dir="fonts" path="fonts" />
+    
+    <services>
+        <webSocket path="demo/ws" xpipe="http://www.xmlpipe.org/xpe/ms/http" name="ms_demo"/>
+        <service path="/demo"  sendTo="ms_demo">
+            <post  xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+            <get   xpipe="http://www.xmlpipe.org/xpe/ms/http/request" />
+        </service>
+    </services>
+    
+</site>

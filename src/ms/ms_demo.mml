@@ -1,0 +1,17 @@
+<ms domain="demo">
+
+   <topic name="http" type="http">
+       <pub src="demo/ws" protocol="http" transport="ws" handler="demo" />
+   </topic>
+   
+   <handler name="demo" >
+       <script src="demo.js" />
+   </handler>
+   
+   <hello encoding="UTF8" />
+   
+   <!-- create one more object for different configuration -->
+   
+   <hello name="hello2" encoding="GBK" />
+
+</ms>
